@@ -38,7 +38,7 @@ Replace /path/to/sync.sh with the actual path to your sync.sh script.
 
 3) Reload systemd: Run the following command to reload the systemd configuration:
 ``` bash
-systemctl daemon-reload
+systemctl --user daemon-reload
 ```
 
 4) Enable the service: Run the following command to enable the service to start automatically on boot:
