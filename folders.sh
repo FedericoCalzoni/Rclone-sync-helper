@@ -33,7 +33,6 @@ parameters=(
     # "--skip-links"
     # "--exclude=/foo1/foo2/**"
     # "--exclude=/foo3/**"
-    # "--exclude=/.**"
     # "--exclude=*cache/**"
     # "--exclude=*Cache/**"
     # "--exclude=*tmp/**"
@@ -42,7 +41,7 @@ parameters=(
     # "--exclude=*log/**"
     # "--exclude=*LOG/**"
     # "--exclude=*.log"
-    "--delete-excluded"
+    # "--delete-excluded"
 )
 sync_folder "/home/$USER/Desktop/" "$hostname/Desktop" "${parameters[@]}"
 
@@ -50,69 +49,32 @@ sync_folder "/home/$USER/Desktop/" "$hostname/Desktop" "${parameters[@]}"
 # Sync Documents folder
 parameters=(
     # "--skip-links"
-    # "--exclude=/foo1/foo2/**"
-    # "--exclude=/foo3/**"
-    # "--exclude=/.**"
-    # "--exclude=*cache/**"
-    # "--exclude=*Cache/**"
-    # "--exclude=*tmp/**"
-    # "--exclude=*metadata/**"
-    # "--exclude=*.tmp"
-    # "--exclude=*log/**"
-    # "--exclude=*LOG/**"
-    # "--exclude=*.log"
-    "--delete-excluded"
+    # "--exclude=/foo1/**"
+    # "--delete-excluded"
 )
 sync_folder "/home/$USER/Documents/" "$hostname/Documents" "${parameters[@]}"
 
 # Sync Music folder
 parameters=(
     # "--skip-links"
-    # "--exclude=/foo4/foo5/**"
-    # "--exclude=/.**"
-    # "--exclude=*cache/**"
-    # "--exclude=*Cache/**"
-    # "--exclude=*tmp/**"
-    # "--exclude=*metadata/**"
-    # "--exclude=*.tmp"
-    # "--exclude=*log/**"
-    # "--exclude=*LOG/**"
-    # "--exclude=*.log"
-    "--delete-excluded"
+    # "--exclude=/foo1/**"
+    # "--delete-excluded"
 )
 sync_folder "/home/$USER/Music/" "$hostname/Music" "${parameters[@]}"
 
 # Sync Pictures folder
 parameters=(
     # "--skip-links"
-    # "--exclude=/foo4/foo5/**"
-    # "--exclude=/.**"
-    # "--exclude=*cache/**"
-    # "--exclude=*Cache/**"
-    # "--exclude=*tmp/**"
-    # "--exclude=*metadata/**"
-    # "--exclude=*.tmp"
-    # "--exclude=*log/**"
-    # "--exclude=*LOG/**"
-    # "--exclude=*.log"
-    "--delete-excluded"
+    # "--exclude=/foo1/**"
+    # "--delete-excluded"
 )
 sync_folder "/home/$USER/Pictures/" "$hostname/Pictures" "${parameters[@]}"
 
 # Sync Videos folder
 parameters=(
     # "--skip-links"
-    # "--exclude=/foo5/**"
-    # "--exclude=/.**"
-    # "--exclude=*cache/**"
-    # "--exclude=*Cache/**"
-    # "--exclude=*tmp/**"
-    # "--exclude=*metadata/**"
-    # "--exclude=*.tmp"
-    # "--exclude=*log/**"
-    # "--exclude=*LOG/**"
-    # "--exclude=*.log"
-    "--delete-excluded"
+    # "--exclude=/foo1/**"
+    # "--delete-excluded"
 )
 sync_folder "/home/$USER/Videos/" "$hostname/Videos" "${parameters[@]}"
 
@@ -122,38 +84,17 @@ if [[ $do_sync_confetc =~ ^(y|Y|)$ ]]; then
     # Sync /.config folder
     parameters=(
         # "--skip-links"
-        # "--exclude=/foo/**"
-        # "--exclude=*cache/**"
-        # "--exclude=*Cache/**"
-        # "--exclude=CachedData/**"
-        # "--exclude=*tmp/**"
-        # "--exclude=*metadata/**"
-        # "--exclude=*.tmp"
-        # "--exclude=*log/**"
-        # "--exclude=*LOG/**"
-        # "--exclude=*log.*"
-        # "--exclude=logs/**"
-        # "--exclude=*.log"
-        "--delete-excluded"
+        # "--exclude=/foo1/**"
+        # "--delete-excluded"
     )
     sync_folder "/home/$USER/.config/" "$hostname/.config" "${parameters[@]}"
     
     # Sync /etc folder
     parameters=(
         # "--skip-links"
-        # "--exclude=sane.d/**"
-        # "--exclude=*cache/**"
-        # "--exclude=*Cache/**"
-        # "--exclude=*tmp/**"
-        # "--exclude=*metadata/**"
-        # "--exclude=*.tmp"
-        # "--exclude=*log/**"
-        # "--exclude=*LOG/**"
-        # "--exclude=*.log"
-        # "--exclude=*.key"
-        # "--exclude=key.*"
-        "--delete-excluded"
-        "--ignore-errors"
+        # "--exclude=/foo1/**"
+        # "--delete-excluded"
+        # "--ignore-errors"
     )
     sync_folder "/etc/" "$hostname/etc" "${parameters[@]}"
     
