@@ -38,7 +38,7 @@ else # UI MODE
 	#   sudo apt-get install zenity
 
 	# Wait for 60 seconds
-	# sleep 60;
+	sleep 60;
 	
 	# Prompt the user to sync remote using Zenity
 	if zenity --question --text='RClone V4 - Do you want to sync remote?'; then
@@ -48,12 +48,11 @@ else # UI MODE
 			if command -v "$terminal" > /dev/null 2>&1; then
 				$terminal -e bash -c 'read -t 10 -n 1 -p $'\''\e[1;32mRClone V4 - Do you want to sync .config and etc? (Y/n)\e[0m '\''; ./folders.sh "$REPLY"'
 			fi
+			echo "terminal emulator not found, please install one, or change the TERMINAL variable in the script"
+			echo "only tested with tilix"
 		done		
 	fi
-
-	echo "terminal emulator not found, please install one, or change the TERMINAL variable in the script"
-	echo "only tested with tilix"
-	
+	echo "Completed successfully"
 fi
 
 echo ""

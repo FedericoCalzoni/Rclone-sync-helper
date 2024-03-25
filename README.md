@@ -36,6 +36,28 @@ WantedBy=default.target
 
 Replace /path/to/sync.sh with the actual path to your sync.sh script.
 
+
+Optionally you could also add a timer to ensure it will be executed regularly:
+Create a timer file with the same name of the .service file, but with .timer extension.
+
+An example is shown below: 
+``` ini
+[Unit]
+Description=Run RClone Sync Service Regularly
+After=multi-user.target
+
+[Timer]
+OnCalendar=Daily
+RandomizedDelaySec=1min
+AccuracySec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.targe
+```
+
+
+
 3) Reload systemd: Run the following command to reload the systemd configuration:
 ``` bash
 systemctl --user daemon-reload
