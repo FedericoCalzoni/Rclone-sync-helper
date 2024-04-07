@@ -35,12 +35,14 @@ parameters=(
     # "--exclude=/foo3/**"
     # "--exclude=*cache/**"
     # "--exclude=*Cache/**"
+    # "--exclude=*/cache/**"
     # "--exclude=*tmp/**"
     # "--exclude=*metadata/**"
     # "--exclude=*.tmp"
     # "--exclude=*log/**"
     # "--exclude=*LOG/**"
     # "--exclude=*.log"
+    # "--exclude=*/.git/**" #removes folders that contains the .git folder
     # "--delete-excluded"
 )
 sync_folder "/home/$USER/Desktop/" "$hostname/Desktop" "${parameters[@]}"
